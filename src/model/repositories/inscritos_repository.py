@@ -32,14 +32,15 @@ class InscritosRepository(InscritosRepositoryInterface):
       
     def select_subscriber_by_link(self, subscriber_link:str, event_id: int) -> list:
       with DBConnectionHandler() as db:
-        data = {
+        data = (
           db.session.query(Inscritos)
-          .filter(
+          .filter
+          (
             Inscritos.link == subscriber_link,
             Inscritos.evento_id == event_id
-            )
+          )
           .all()
-        }
+        )
         
         return data
       

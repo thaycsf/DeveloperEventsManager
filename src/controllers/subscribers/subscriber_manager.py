@@ -23,7 +23,7 @@ class SubscriberManager:
         for subscriber in subscribers:
             formatted_subscriber.append(
                 {
-                    "nome": subscriber.name,
+                    "nome": subscriber.nome,
                     "email": subscriber.email,
                 }
             )
